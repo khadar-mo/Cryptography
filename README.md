@@ -1,7 +1,7 @@
 # Cryptography
 Exploring the security of Learning With Errors crypto system
 
-Task 1 - Implementing Learning With Errors
+## Task 1 - Implementing Learning With Errors
 
 ### Key Generation
 1. Choose a matrix A uniformly at random from $\mathbb{Z}_q^{m \times n}$
@@ -32,3 +32,24 @@ A function encrypt(plaintext, public key, q) which, given a plaintext and a publ
 
 ### Decryption function:
 A function decrypt(ciphertext, private key, q) which, given a ciphertext and private key of compatible sizes, and an integer q, returns the correct plaintext, with the same data types as in the encryption function.
+
+## Task 2 - Attacking ‘Learning Without Errors’
+
+Alice and Bob wish to communicate secretly and in a quantum-secure fashion. Since they do not like errors, they design their own cryptosystem, which they call ‘Learning Without Errors’. This takes the specification of Learning With Errors above, but sets the error distribution $x$ to always be 0.
+
+### Attack function:
+Design and implement a function crack1(ciphertext, public key, q) which, given a ciphertext, returns the correct plaintext (i.e. can decode the ciphertext using only the public key and not the private key) when $x$ is always 0.
+
+## Task 3 - Attacking ‘Learning With A Few Errors’
+
+To improve security, Alice and Bob switch to a non-zero error distribution $x$. However, they choose a distubution which is 1 or -1 with low probability, and is otherwise 0. your task is to devise an attack on their cryptosystem which exploits the fact that there are few errors.
+
+### Attack function:
+Design and implement a function crack2(ciphertext, public key, q) which, given a ciphertext, returns the correct plaintext, when $x$ is almost 0.
+
+## Task 4 - Attacking ‘Learning With Errors’
+
+Finally, Alice and Bob switch to a more appropriate choice of $x$, and use the standard specification of Learning With Errors. Your task is again to attack their cryptosystem.
+
+### Attack function:
+Design and implement a function crack3(ciphertext, public key, q) which, given a ciphertext, returns the correct plaintext.
